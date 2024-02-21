@@ -1,0 +1,17 @@
+syntax = "proto3";
+package keyvaluestore;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/jbl1108/flyapi";
+
+message KeyValue {
+    string key = 1;
+    string value = 2; 
+    string storeage = 3; 
+    google.protobuf.Timestamp last_updated = 4;
+  }
+
+message KeyValues {
+  repeated KeyValue KeyValue = 1;
+}
