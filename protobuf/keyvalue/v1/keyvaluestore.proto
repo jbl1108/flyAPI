@@ -15,3 +15,18 @@ message KeyValue {
 message KeyValues {
   repeated KeyValue KeyValue = 1;
 }
+
+enum Status {
+  OK = 0;
+  ERROR = 1;
+}
+
+message StatusReply {
+  Status status = 1; 
+}
+
+// The greeting service definition.
+service StoreKeyValue {
+  //StoreKeyValue
+  rpc StoreKeyValue (KeyValues) returns (StatusReply) {}
+}
